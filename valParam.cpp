@@ -5,43 +5,88 @@ using namespace std;
 bool validarParametros(string comando, string params[], int cantidad)
 {
     if (comando == "cargar_comandos")
-        return validarCargar_comandos(params, cantidad);
+    {
+        if (validarCargar_comandos(params, cantidad)){
 
+            cout << "Resultado exitoso, se cargaron los comandos..." << endl;
+        }
+    }
     else if (comando == "cargar_elementos")
-        return validarCargar_elementos(params, cantidad);
+
+        if (validarCargar_elementos(params, cantidad)){
+
+            cout << "Resultado exitoso, se cargaron los elementos..." << endl;
+        }
 
     else if (comando == "agregar_movimiento")
-        return agregar_movimiento(params, cantidad);
+
+        if(agregar_movimiento(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el movimiento..." << endl;
+
+        }
 
     else if (comando == "agregar_analisis")
-        return agregar_analisis(params, cantidad);
+
+        if(agregar_analisis(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else if (comando == "agregar_elemento")
-        return agregar_elemento(params, cantidad);
+
+        if(agregar_elemento(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else if (comando == "guardar")
-        return validar_guardar(params, cantidad);
+        if(validar_guardar(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else if (comando == "simular_comandos")
-        return validar_simular(params, cantidad);
+        if(validar_simular(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else if (comando == "ubicar_elementos")
-        return validar_ubicar(params, cantidad);
+        if(validar_ubicar (params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else if (comando == "en_cuadrante")
-        return validar_cuadrante(params, cantidad);
+        if(validar_cuadrante(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else if (comando == "crear_mapa")
-        return validar_crearMapa(params, cantidad);
+        if(validar_crearMapa(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else if (comando == "ruta_mas_larga")
-        return validar_ruta(params, cantidad);
+        if(validar_ruta(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else if (comando == "ayuda")
-        return validar_ayuda(params, cantidad);
+        if(validar_ayuda(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else if (comando == "salir")
-        return validar_salir(params, cantidad);
+        if(validar_salir(params, cantidad)){
+
+            cout << "Resultado exitoso, se agrego el analisis..." << endl;
+        }
 
     else
     {
@@ -142,17 +187,21 @@ bool agregar_elemento(string params[], int cantidad){
         return false;
     }
 
-    if (params[2]!="roca"||params[2]!="crater"||params[2]!="monticulo"||params[2]!="duna")
+    if (params[0]!="roca"||params[0]!="crater"||params[0]!="monticulo"||params[0]!="duna")
     {
        cout<<"El tipo de componente NO es valido"<<endl;
        return false;
     }
 
-    if (condition)
+    // falta verificacion de si es un numero o no para los ejes X y Y
+
+    if (params[2]!="cm"||params[2]!="dm"||params[2]!="m"||params[2]!="km")
     {
-        /* code */
+       cout<<"El tipo de unidad NO es valida"<<endl;
+       return false;
     }
-    
+
+    return true;
 
 }
 
